@@ -27,10 +27,7 @@ export default function Register() {
     try {
       setLoading(true);
 
-      await axios.post(
-        "http://localhost:5000/api/auth/register",
-        form
-      );
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/register`, form);
 
       toast.success("Account created successfully 🎉");
 
